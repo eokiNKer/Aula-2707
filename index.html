@@ -47,7 +47,31 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
+
+        <div class="lamp-container">
+            <img id="lampImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1TkrlfDB3XoR4FDdM-UXgypYceYvkBy95dVVrA08YXyKqHu9-H02RR2IHeRuRdPFEdg8&usqp=CAU" alt="Lâmpada Apagada">
+        </div>
+
+        <button id="switchButton" class="btn btn-primary">Ligar / Desligar Lâmpada</button>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lampImage = document.getElementById("lampImage");
+            const switchButton = document.getElementById("switchButton");
+
+            let isLampOn = false;
+
+            switchButton.addEventListener("click", function () {
+                isLampOn = !isLampOn;
+                if (isLampOn) {
+                    lampImage.src = "https://img.freepik.com/vetores-gratis/lampada-iluminada-realista-isolada_1284-41774.jpg?w=2000";
+                } else {
+                    lampImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1TkrlfDB3XoR4FDdM-UXgypYceYvkBy95dVVrA08YXyKqHu9-H02RR2IHeRuRdPFEdg8&usqp=CAU";
+                }
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
