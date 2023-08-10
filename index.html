@@ -4,50 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Lista Maker</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center my-4">Drones Legais</h1>
-
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://i.ytimg.com/vi/r5kukRMmZNI/maxresdefault.jpg" alt="drone">
-                    <div class="carousel-caption">
-                        <h5 class="text-white">DJI MAVIC 3 PRO</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://cdn.awsli.com.br/2500x2500/514/514723/produto/216827873/foto-mavic-3-pro-01-jruhssw0em.png" alt="drone2">
-                    <div class="carousel-caption">
-                        <h5 class="text-white">DJI MINI 3 PRO</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://cdn.awsli.com.br/600x450/364/364075/produto/37278377/ee8f4cf7fa.jpg" alt="drone3">
-                    <div class="carousel-caption">
-                        <h5 class="text-white">DJI MAVIC 2 PRO</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://m.media-amazon.com/images/I/51gqB2a+0GL._AC_UF1000,1000_QL80_.jpg" alt="drone4">
-                    <div class="carousel-caption">
-                        <h5 class="text-white">DJI AVATA</h5>
-                    </div>
-                </div>
-            </div>
-
-            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
+        <h1>Lista Maker</h1>
+        <div class="list-form">
+            <input type="text" id="newItem" placeholder="Adicionar novo item">
+            <button id="addItemButton">Adicionar</button>
         </div>
+        <ul id="itemList"></ul>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addItemButton = document.getElementById("addItemButton");
+            const newItemInput = document.getElementById("newItem");
+            const itemList = document.getElementById("itemList");
+
+            addItemButton.addEventListener("click", function () {
+                const newItemText = newItemInput.value.trim();
+                if (newItemText !== "") {
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = `
+                        ${newItemText}
+                        <button class="deleteButton">Excluir</button>
+                    `;
+                    itemList.appendChild(listItem);
+                    newItemInput.value = "";
+
+                    const deleteButtons = document.getElementsByClassName("deleteButton");
+                    for (let i = 0; i < deleteButtons.length; i++) {
+                        deleteButtons[i].addEventListener("click", function () {
+                            this.parentNode.remove();
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
