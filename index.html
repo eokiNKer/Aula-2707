@@ -10,32 +10,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>Drones Legais</h1>
+        <h1 class="text-center my-4">Drones Legais</h1>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://i.ytimg.com/vi/r5kukRMmZNI/maxresdefault.jpg" alt="drone">
                     <div class="carousel-caption">
-                        <h3>DJI MAVIC 3 PRO</h3>
+                        <h5 class="text-white">DJI MAVIC 3 PRO</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://cdn.awsli.com.br/2500x2500/514/514723/produto/216827873/foto-mavic-3-pro-01-jruhssw0em.png" alt="drone2">
                     <div class="carousel-caption">
-                        <h3>DJI MINI 3 PRO</h3>
+                        <h5 class="text-white">DJI MINI 3 PRO</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://cdn.awsli.com.br/600x450/364/364075/produto/37278377/ee8f4cf7fa.jpg" alt="drone3">
                     <div class="carousel-caption">
-                        <h3>DJI MAVIC 2 PRO</h3>
+                        <h5 class="text-white">DJI MAVIC 2 PRO</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://m.media-amazon.com/images/I/51gqB2a+0GL._AC_UF1000,1000_QL80_.jpg" alt="drone4">
                     <div class="carousel-caption">
-                        <h3>DJI AVATA</h3>
+                        <h5 class="text-white">DJI AVATA</h5>
                     </div>
                 </div>
             </div>
@@ -47,39 +47,7 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
-
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <div class="lamp-container">
-                    <img id="lampImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1TkrlfDB3XoR4FDdM-UXgypYceYvkBy95dVVrA08YXyKqHu9-H02RR2IHeRuRdPFEdg8&usqp=CAU" alt="Lâmpada Apagada">
-                </div>
-                <button id="switchButton" class="btn btn-primary mt-3">Ligar / Desligar Lâmpada</button>
-            </div>
-            <div class="col-md-6">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/5wF8phuYGv4" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const lampImage = document.getElementById("lampImage");
-            const switchButton = document.getElementById("switchButton");
-
-            let isLampOn = false;
-
-            switchButton.addEventListener("click", function () {
-                isLampOn = !isLampOn;
-                if (isLampOn) {
-                    lampImage.src = "https://img.freepik.com/vetores-gratis/lampada-iluminada-realista-isolada_1284-41774.jpg?w=2000";
-                } else {
-                    lampImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1TkrlfDB3XoR4FDdM-UXgypYceYvkBy95dVVrA08YXyKqHu9-H02RR2IHeRuRdPFEdg8&usqp=CAU";
-                }
-            });
-        });
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
